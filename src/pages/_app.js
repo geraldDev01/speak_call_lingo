@@ -1,4 +1,5 @@
 import "tailwindcss/tailwind.css";
+
 import "@/static/styles/global.css";
 
 export default function App({ Component, pageProps }) {
