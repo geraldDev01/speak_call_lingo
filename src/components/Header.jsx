@@ -1,9 +1,10 @@
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Fade } from "react-reveal";
 
 import menuImg from "@/static/images/menu.svg";
-import { useState } from "react";
+import logoImg from "@/static/images/logo.jpeg";
 
 export const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -16,8 +17,10 @@ export const Header = () => {
     <>
       <header className="text-lg flex justify-between items-center border-b border-slate-300 h-24 w-full bg-white  fixed top-0 z-50">
         <Fade duration={1500} top>
-          <div className="flex gap-x-8 ml-8 text-baseColor font-bold text-2xl ">
-            (lOGO)
+          <div className="flex gap-x-8 ml-8 text-2xl w-44 md:w-60  ">
+            <Link href="/">
+              <Image alt="icon" src={logoImg} />
+            </Link>
           </div>
           <div className="md:hidden mr-8 mt-2">
             <button onClick={toggleMenu} className="focus:outline-none">
@@ -25,19 +28,31 @@ export const Header = () => {
             </button>
           </div>
           <div className="hidden md:flex gap-x-8 mr-8">
-            <span className={itemStyle}>Inicio</span>
-            <span className={itemStyle}>Sobre Nosotros</span>
-            <span className={itemStyle}>Cursos</span>
+            <Link href="/">
+              <span className={itemStyle}>Inicio</span>
+            </Link>
+            <Link href="/nosotros">
+              <span className={itemStyle}>Sobre Nosotros</span>
+            </Link>
+            <Link href="/cursos">
+              <span className={itemStyle}>Cursos</span>
+            </Link>
             <span className={itemStyle}>Contáctanos</span>
           </div>
         </Fade>
       </header>
       {isOpen && (
         <Fade>
-          <div className="md:hidden bg-white w-full absolute mt-24 z-50 text-center text-lg border-primary border-b-2 shadow-lg">
-            <span className={itemStyle}>Inicio</span>
-            <span className={itemStyle}>Sobre Nosotros</span>
-            <span className={itemStyle}>Cursos</span>
+          <div className="md:hidden bg-white w-full absolute z-50 text-center text-lg border-primary border-b-2 shadow-lg">
+            <Link href="/">
+              <span className={itemStyle}>Inicio</span>
+            </Link>
+            <Link href="/nosotros">
+              <span className={itemStyle}>Sobre Nosotros</span>
+            </Link>
+            <Link href="/cursos">
+              <span className={itemStyle}>Cursos</span>
+            </Link>
             <span className={itemStyle}>Contáctanos</span>
           </div>
         </Fade>

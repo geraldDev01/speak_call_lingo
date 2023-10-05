@@ -3,54 +3,117 @@ import Image from "next/image";
 import { Slide, Fade } from "react-reveal";
 import Zoom from "react-reveal/Zoom";
 import Jump from "react-reveal/Jump";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import Tada from "react-reveal/Tada";
 
 import metodoImg from "@/static/images/diploma.svg";
 import tallerImg from "@/static/images/study.svg";
 import workImg from "@/static/images/work.svg";
 import bgImage from "@/static/images/studyBackground.jpg";
-import bgImage2 from "@/static/images/study2.jpg";
+import teacherBg from "@/static/images/teacherbg.jpg";
+import metodoBg from "@/static/images/metodo.jpg";
+
+import waveImg from "@/static/images/wave.svg";
+import logoImg from "@/static/images/iconLogo.jpeg";
+
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/scrollbar";
+import { Footer } from "@/components/Footer";
+import Link from "next/link";
 
 export default function Index() {
   return (
     <main>
       <Header />
-
-      <Slide duration={1500} bottom>
-        <section className="flex flex-col lg:flex-row items-center p-12 gap-6 lg:justify-between lg:min-h-screen">
-          <div className="flex flex-col lg:w-1/3">
-            <h1 className="mt-24 text-4xl font-semibold text-primary">
-              Aprender inglés con nosotros es fácil y divertido.
-            </h1>
-            <p className="mt-6 text-gray-600 font-medium text-xl">
-              Te ayudamos a superar cualquier barrera de aprendizaje y hablarlo
-              en 3 meses.
-            </p>
-            <p className="mt-2 font-semibold text-2xl">100% Garantizado !</p>
-          </div>
-          <div>
-            {/* <Swiper
-              modules={[Navigation, Pagination, Autoplay]}
-              // autoplay={{ delay: 3000 }}
-              // loop={true}
-              navigation
-              pagination={{ clickable: true }}
-              // className="rounded-xl shadow-xl"
-            >
-              <SwiperSlide>
-                <Image width={700} alt="bg" src={bgImage} />
-              </SwiperSlide>
-              <SwiperSlide>
-                <Image width={700} alt="bg" src={bgImage2} />
-                <Image width={700} alt="bg" src={bgImage} />
-              </SwiperSlide>
-            </Swiper> */}
+      <Fade>
+        <section className="landing">
+          <div className="dark-overlay">
+            <div className="landing-inner text-white">
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold mb-4 ">
+                Aprender inglés con nosotros es fácil y divertido
+              </h1>
+              <p className="text-xl pb-1 font-medium">
+                Te ayudamos a superar cualquier barrera de aprendizaje y
+                hablarlo en 3 meses
+              </p>
+              <p className="text-2xl pb-1 font-semibold mt-2">
+                100% garantizado
+              </p>
+              <div className="mt-6">
+                <Link href="/contactanos">
+                  <span className="p-4 bg-baseColor font-medium text-lg mt-12">
+                    ¡Matricúlate YA!
+                  </span>
+                </Link>
+              </div>
+            </div>
           </div>
         </section>
-      </Slide>
+      </Fade>
+      <section className="gap-x-30 grid grid-cols-1 md:grid-cols-2 py-10 place-items-center px-8 xl:px-20 mt-16">
+        <Slide left>
+          <div className="md:w-11/12">
+            <h1 className="mt-24 text-3xl md:text-4xl font-semibold text-primary">
+              Nuestra metodología
+            </h1>
+            <p className="mt-6 text-gray-600 text-lg md:text-xl">
+              Olvida los viejos métodos que no funcionan. Gracias a nuestra
+              método de aprendizaje moderno “Programación Neurolingüística”
+              (PNL) podrás aprender desde cero y comunicarte en 3 meses. 100%
+              garantizado.
+            </p>
+          </div>
+        </Slide>
+        <Fade duration={1500}>
+          <Image
+            width={500}
+            height={200}
+            className="rounded-lg"
+            alt="bg"
+            src={metodoBg}
+          />
+        </Fade>
+      </section>
 
-      <section className="flex flex-col items-center justify-center py-8 lg:py-20 bg-primary text-white">
+      <section className="gap-x-30 grid grid-cols-1 md:grid-cols-2 py-10 place-items-center px-8 xl:px-20 mt-20">
+        <Fade duration={1500}>
+          <Image width={500} className="rounded-lg" alt="bg" src={bgImage} />
+        </Fade>
+        <Slide right>
+          <div className="md:w-11/12">
+            <h1 className="mt-24 text-3xl md:text-4xl font-semibold text-primary">
+              Talleres Personalizados
+            </h1>
+            <p className="mt-6 text-gray-600 text-lg md:text-xl">
+              En Speak Call Lingo no estás solo, con nuestros entrenadores
+              (profesores) tendrás la oportunidad de recibir talleres totalmente
+              personalizados para fortalecer el área de aprendizaje que más
+              necesites.
+            </p>
+          </div>
+        </Slide>
+      </section>
+
+      <section className="gap-x-30 grid grid-cols-1 md:grid-cols-2 py-10 place-items-center px-8 xl:px-20 mt-20">
+        <Slide left>
+          <div className="md:w-11/12">
+            <h1 className="mt-24 text-3xl md:text-4xl font-semibold text-primary">
+              Profesores Certificados
+            </h1>
+            <p className="mt-6 text-gray-600 text-lg md:text-xl">
+              Nuestro equipo de profesores está conformado por profesionales.
+              Cada profesor trae consigo años de experiencia y una dedicación
+              incomparable para ayudarte a alcanzar la fluidez que tanto deseas.
+            </p>
+          </div>
+        </Slide>
+        <Fade duration={1500}>
+          <Image width={500} className="rounded-lg" alt="bg" src={teacherBg} />
+        </Fade>
+      </section>
+
+      <Image alt="wave" src={waveImg} className="border-0" />
+      <section className="flex flex-col items-center justify-center py-8 lg:pb-20 bg-primary text-white border-0">
         <div className="text-center">
           <Jump>
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold mb-4">
@@ -67,11 +130,24 @@ export default function Index() {
         </div>
       </section>
 
+      <Tada>
+        <div className="flex justify-center pt-12">
+          <Image className="w-44 md:w-60" src={logoImg} alt="logo img" />
+        </div>
+      </Tada>
+
       <section className="py-8 px-8 mt-4">
         <div className="container mx-auto">
-          <div className="border-b border-gray-400 pb-4 mb-12">
-            <h1 className="text-2xl">Por qué estudiar con nosotros</h1>
+          <div className="border-b border-gray-400 pb-4 mb-3">
+            <h1 className="text-2xl font-medium">
+              Por qué estudiar con nosotros
+            </h1>
           </div>
+          <p className="pb-6 text-xl text-gray-600 mb-4">
+            En Speak Call Lingo te empoderamos brindándote las habilidades
+            necesarias para mejorar tu vida y tener éxito en un mundo
+            globalizado
+          </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <Zoom duration={1500}>
@@ -109,7 +185,7 @@ export default function Index() {
                 <div className="flex flex-col text-center justify-center items-center gap-2">
                   <Image src={workImg} alt="icon" className="w-20" />
                   <h2 className="text-xl font-semibold text-primary mb-4 uppercase">
-                  inserción Laboral
+                    inserción Laboral
                   </h2>
                 </div>
                 <p className="text-base text-justify">
@@ -119,68 +195,10 @@ export default function Index() {
               </div>
             </Zoom>
           </div>
-
-          {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <Zoom duration={1500}>
-              <div className="bg-white px-6 py-8  rounded-lg shadow-lg border-4 border-primary">
-                <div className="flex flex-col text-center justify-center items-center gap-2">
-                  <Image src={metodoImg} alt="icon" className="w-20" />
-                  <h2 className="text-xl font-semibold text-primary mb-4">
-                    NUESTRA METODOLOGÍA
-                  </h2>
-                </div>
-                <p className="text-base text-justify">
-                  Olvida los viejos métodos que no funcionan. Gracias a nuestra
-                  método de aprendizaje moderno “Programación Neurolingüística”
-                  (PNL) podrás aprender desde cero y comunicarte en 3 meses.
-                  100% garantizado.
-                </p>
-              </div>
-            </Zoom>
-            <Zoom duration={1500}>
-              <div className="bg-white px-6 py-8  rounded-lg shadow-lg  border-4 border-secondary">
-                <div className="flex flex-col text-center justify-center items-center gap-2">
-                  <Image src={tallerImg} alt="icon" className="w-20" />
-                  <h2 className="text-xl  font-semibold text-primary mb-4">
-                    TALLERES PERSONALIZADOS
-                  </h2>
-                </div>
-
-                <p className="text-base text-justify">
-                  En Speak Call Lingo no estás solo, con nuestros entrenadores
-                  (profesores) tendrás la oportunidad de recibir talleres
-                  totalmente personalizados para fortalecer el área de
-                  aprendizaje que más necesites.
-                </p>
-              </div>
-            </Zoom>
-            <Zoom duration={1500}>
-              <div className="bg-white px-6 py-8  rounded-lg shadow-lg  border-4 border-baseColor">
-                <div className="flex flex-col text-center justify-center items-center gap-2">
-                  <Image src={workImg} alt="icon" className="w-20" />
-                  <h2 className="text-xl font-semibold text-primary mb-4">
-                    PROFESORES CERTIFICADOS
-                  </h2>
-                </div>
-                <p className="text-base text-justify">
-                  Nuestro equipo de profesores está conformado por
-                  profesionales. Cada profesor trae consigo años de experiencia
-                  y una dedicación incomparable para ayudarte a alcanzar la
-                  fluidez que tanto deseas.
-                </p>
-              </div>
-            </Zoom>
-          </div> */}
         </div>
       </section>
 
-      {/* <section className="flex items-center justify-center py-8 lg:py-20 bg-baseColor text-white">
-        <Jump>
-          <h1 className="text-4xl lg:text-5xl font-semibold mb-4">
-            Por que estudiar con nosotros?
-          </h1>
-        </Jump>
-      </section> */}
+      <Footer />
     </main>
   );
 }
