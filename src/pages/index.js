@@ -11,9 +11,9 @@ import workImg from "@/static/images/work.svg";
 import bgImage from "@/static/images/studyBackground.jpg";
 import teacherBg from "@/static/images/teacherbg.jpg";
 import metodoBg from "@/static/images/metodo.jpg";
-
 import waveImg from "@/static/images/wave.svg";
-import logoImg from "@/static/images/iconLogo.jpeg";
+import logoImg from "@/static/images/logo.jpeg";
+import iconLogo from "@/static/images/iconLogo.jpeg";
 
 import "swiper/css";
 import "swiper/css/pagination";
@@ -50,10 +50,13 @@ export default function Index() {
           </div>
         </section>
       </Fade>
-      <section className="gap-x-30 grid grid-cols-1 md:grid-cols-2 py-10 place-items-center px-8 xl:px-20 mt-16">
+      <div className="flex justify-center items-center py-6 ">
+        <Image className="w-80 md:w-96" alt="icon" src={logoImg} />
+      </div>
+      <section className="gap-x-30 grid grid-cols-1 md:grid-cols-2 py-10 place-items-center px-8 gap-y-10 xl:px-20 ">
         <Slide left>
           <div className="md:w-11/12">
-            <h1 className="mt-24 text-3xl md:text-4xl font-semibold text-primary">
+            <h1 className=" text-3xl md:text-4xl font-semibold text-primary">
               Nuestra metodología
             </h1>
             <p className="mt-6 text-gray-600 text-lg md:text-xl">
@@ -75,13 +78,13 @@ export default function Index() {
         </Fade>
       </section>
 
-      <section className="gap-x-30 grid grid-cols-1 md:grid-cols-2 py-10 place-items-center px-8 xl:px-20 mt-20">
+      <section className="gap-x-30  gap-y-4 grid grid-cols-1 md:grid-cols-2 py-10 place-items-center px-8 xl:px-20 mt-10 md:mt-20">
         <Fade duration={1500}>
           <Image width={500} className="rounded-lg" alt="bg" src={bgImage} />
         </Fade>
         <Slide right>
           <div className="md:w-11/12">
-            <h1 className="mt-24 text-3xl md:text-4xl font-semibold text-primary">
+            <h1 className=" text-3xl md:text-4xl font-semibold text-primary">
               Talleres Personalizados
             </h1>
             <p className="mt-6 text-gray-600 text-lg md:text-xl">
@@ -94,10 +97,10 @@ export default function Index() {
         </Slide>
       </section>
 
-      <section className="gap-x-30 grid grid-cols-1 md:grid-cols-2 py-10 place-items-center px-8 xl:px-20 mt-20">
+      <section className="gap-x-30  gap-y-16 grid grid-cols-1 md:grid-cols-2 py-10 place-items-center px-8 xl:px-20 mt-10 md:mt-20">
         <Slide left>
           <div className="md:w-11/12">
-            <h1 className="mt-24 text-3xl md:text-4xl font-semibold text-primary">
+            <h1 className=" text-3xl md:text-4xl font-semibold text-primary">
               Profesores Certificados
             </h1>
             <p className="mt-6 text-gray-600 text-lg md:text-xl">
@@ -132,7 +135,7 @@ export default function Index() {
 
       <Tada>
         <div className="flex justify-center pt-12">
-          <Image className="w-44 md:w-60" src={logoImg} alt="logo img" />
+          <Image className="w-44 md:w-60" src={iconLogo} alt="logo img" />
         </div>
       </Tada>
 
