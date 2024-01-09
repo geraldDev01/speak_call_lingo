@@ -60,7 +60,7 @@ export default function Index() {
               Nuestra metodología
             </h1>
             <p className="mt-6 text-gray-600 text-lg md:text-xl">
-              Olvida los viejos métodos que no funcionan. Gracias a nuestra
+              Olvida los viejos métodos que no funcionan. Gracias a nuestro
               método de aprendizaje moderno “Programación Neurolingüística”
               (PNL) podrás aprender desde cero y comunicarte en 3 meses. 100%
               garantizado.
@@ -85,10 +85,10 @@ export default function Index() {
         <Slide right>
           <div className="md:w-11/12">
             <h1 className=" text-3xl md:text-4xl font-semibold text-primary">
-              Talleres Personalizados
+              Reforzamientos personalizados
             </h1>
             <p className="mt-6 text-gray-600 text-lg md:text-xl">
-              En Speak Call Lingo no estás solo, con nuestros entrenadores
+              En Speak Call Lingo no estás solo. Con nuestros entrenadores
               (profesores) tendrás la oportunidad de recibir talleres totalmente
               personalizados para fortalecer el área de aprendizaje que más
               necesites.
@@ -101,11 +101,11 @@ export default function Index() {
         <Slide left>
           <div className="md:w-11/12">
             <h1 className=" text-3xl md:text-4xl font-semibold text-primary">
-              Profesores Certificados
+              Entrenadores certificados
             </h1>
             <p className="mt-6 text-gray-600 text-lg md:text-xl">
-              Nuestro equipo de profesores está conformado por profesionales.
-              Cada profesor trae consigo años de experiencia y una dedicación
+              Nuestro equipo de entrenadores está conformado por profesionales.
+              Cada entrenador trae consigo años de experiencia y una dedicación
               incomparable para ayudarte a alcanzar la fluidez que tanto deseas.
             </p>
           </div>
