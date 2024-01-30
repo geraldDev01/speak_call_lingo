@@ -1,5 +1,5 @@
-import { Header } from "@/components/Header";
 import Image from "next/image";
+import Link from "next/link";
 import { Slide, Fade } from "react-reveal";
 import Zoom from "react-reveal/Zoom";
 import Jump from "react-reveal/Jump";
@@ -18,13 +18,11 @@ import iconLogo from "@/static/images/iconLogo.jpeg";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
-import { Footer } from "@/components/Footer";
-import Link from "next/link";
+import { Layout } from "@/components/Layout";
 
 export default function Index() {
   return (
-    <main>
-      <Header />
+    <Layout>
       <Fade>
         <section className="landing">
           <div className="dark-overlay">
@@ -54,7 +52,7 @@ export default function Index() {
         <Image className="w-80 md:w-96" alt="icon" src={logoImg} />
       </div>
       <section className="gap-x-30 grid grid-cols-1 md:grid-cols-2 py-10 place-items-center px-8 gap-y-10 xl:px-20 ">
-        <Slide left>
+        <Fade>
           <div className="md:w-11/12">
             <h1 className=" text-3xl md:text-4xl font-semibold text-primary">
               Nuestra metodología
@@ -66,7 +64,7 @@ export default function Index() {
               garantizado.
             </p>
           </div>
-        </Slide>
+        </Fade>
         <Fade duration={1500}>
           <Image
             width={500}
@@ -82,9 +80,9 @@ export default function Index() {
         <Fade duration={1500}>
           <Image width={500} className="rounded-lg" alt="bg" src={bgImage} />
         </Fade>
-        <Slide right>
+        <Fade>
           <div className="md:w-11/12">
-            <h1 className=" text-3xl md:text-4xl font-semibold text-primary">
+            <h1 className=" text-3xl  md:text-4xl font-semibold text-primary">
               Reforzamientos personalizados
             </h1>
             <p className="mt-6 text-gray-600 text-lg md:text-xl">
@@ -94,11 +92,11 @@ export default function Index() {
               necesites.
             </p>
           </div>
-        </Slide>
+        </Fade>
       </section>
 
       <section className="gap-x-30  gap-y-16 grid grid-cols-1 md:grid-cols-2 py-10 place-items-center px-8 xl:px-20 mt-10 md:mt-20">
-        <Slide left>
+        <Fade>
           <div className="md:w-11/12">
             <h1 className=" text-3xl md:text-4xl font-semibold text-primary">
               Entrenadores certificados
@@ -109,7 +107,7 @@ export default function Index() {
               incomparable para ayudarte a alcanzar la fluidez que tanto deseas.
             </p>
           </div>
-        </Slide>
+        </Fade>
         <Fade duration={1500}>
           <Image width={500} className="rounded-lg" alt="bg" src={teacherBg} />
         </Fade>
@@ -200,8 +198,6 @@ export default function Index() {
           </div>
         </div>
       </section>
-
-      <Footer />
-    </main>
+    </Layout>
   );
 }

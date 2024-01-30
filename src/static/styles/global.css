@@ -10,7 +10,6 @@ html {
     center/cover;
   height: calc(100vh - 96px);
   margin-top: 96px;
-  
 }
 
 .dark-overlay {
@@ -25,4 +24,8 @@ html {
   align-items: center;
   justify-content: center;
   text-align: center;
+}
+
+.margin-top-page {
+  margin-top: 96px;
 }
