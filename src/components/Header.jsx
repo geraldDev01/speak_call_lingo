@@ -16,7 +16,7 @@ export const Header = () => {
   return (
     <>
       <header className="text-lg flex justify-between items-center border-b border-slate-300 h-24 w-full bg-white  fixed top-0 z-50">
-        <Fade duration={1500} top>
+      
           <div className="flex gap-x-8 ml-8 text-2xl w-44 md:w-60  ">
             <Link href="/">
               <Image alt="icon" src={logoImg} />
@@ -31,15 +31,15 @@ export const Header = () => {
             <Link href="/">
               <span className={itemStyle}>Inicio</span>
             </Link>
-            <Link href="/nosotros">
+            <Link href="/AboutUs">
               <span className={itemStyle}>Sobre Nosotros</span>
             </Link>
-            <Link href="/cursos">
+            <Link href="/Courses">
               <span className={itemStyle}>Cursos</span>
             </Link>
             <span className={itemStyle}>Contáctanos</span>
           </div>
-        </Fade>
+      
       </header>
       {isOpen && (
         <Fade>
@@ -47,10 +47,10 @@ export const Header = () => {
             <Link href="/">
               <span className={itemStyle}>Inicio</span>
             </Link>
-            <Link href="/nosotros">
+            <Link href="/AboutUs">
               <span className={itemStyle}>Sobre Nosotros</span>
             </Link>
-            <Link href="/cursos">
+            <Link href="/Courses">
               <span className={itemStyle}>Cursos</span>
             </Link>
             <span className={itemStyle}>Contáctanos</span>
