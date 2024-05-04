@@ -15,7 +15,7 @@ export const Header = () => {
 
   return (
     <>
-      <header className="text-lg flex justify-between items-center border-b border-slate-300 h-24 w-full bg-white  fixed top-0 z-50">
+      <header className="text-lg flex justify-between items-center border-b-2 border-secondary h-24 w-full bg-white  fixed top-0 z-50">
       
           <div className="flex gap-x-8 ml-8 text-2xl w-44 md:w-60  ">
             <Link href="/">
