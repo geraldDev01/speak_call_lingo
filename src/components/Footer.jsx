@@ -8,7 +8,7 @@ import facebook from "@/static/images/facebook.svg";
 export const Footer = () => {
   const currentYear = new Date().getFullYear();
   return (
-    <footer className=" text-primary pt-6 pb-2 border-t border-slate-300 mt-8 px-4">
+    <footer className=" text-primaryColor pt-6 pb-2 border-t border-slate-300 px-4">
       <div className="container mx-auto flex justify-between items-center">
         <div className="text-2xl font-bold">
           <div className="w-60 md:w-80">

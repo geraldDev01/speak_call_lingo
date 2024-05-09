@@ -54,7 +54,7 @@ const AboutUs = () => {
           <Image width={400} alt="icon" src={officeImage} />
         </section> */}
         <section className="flex flex-col items-center ">
-          <h1 className="  w-3/4 text-3xl  md:text-4xl  font-semibold text-primary mt-8 mb-4">
+          <h1 className="  w-3/4 text-3xl  md:text-4xl  font-semibold text-primaryColor mt-8 mb-4">
             ¡Queremos verte triunfar y te ayudaremos a que lo logres!
           </h1>
           <p className="text-justify mt-4 w-3/4 text-lg md:text-xl text-gray-600 mb-2">

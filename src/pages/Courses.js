@@ -21,7 +21,7 @@ const Courses = () => {
   return (
     <Layout>
       <div className="margin-top-page ">
-        <section className="flex flex-col items-center justify-center py-8 lg:pb-20 bg-primary text-white border-0">
+        <section className="flex flex-col items-center justify-center py-8 lg:pb-20 bg-primaryColor text-white border-0">
           <div className="text-center">
             <Jump>
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold mb-4">

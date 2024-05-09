@@ -57,12 +57,12 @@ export default function Index() {
 
                   {/* <div className="mt-6 flex flex-col   gap-4"> */}
                   <div className="flex p-6 justify-center items-center bg-baseColor font-medium text-lg h-16 rounded-xl w-[350px]">
-                    <Link href="/contactanos">
+                    <Link href="/Contactanos">
                       <p className="py-4 text-white">QUIERO EMPEZAR DE CERO</p>
                     </Link>
                   </div>
-                  <div className="flex p-6 justify-center items-center bg-primary font-medium text-lg h-16 rounded-xl w-[350px]">
-                    <Link href="/contactanos">
+                  <div className="flex p-6 justify-center items-center bg-primaryColor font-medium text-lg h-16 rounded-xl w-[350px]">
+                    <Link href="/Contactanos">
                       <p className="py-4 text-white">
                         {" "}
                         MEJORAR MIS HABILIDADES
@@ -83,7 +83,7 @@ export default function Index() {
         </section>
       </Fade>
 
-      <section className="flex flex-col items-center justify-center h-60 bg-primary text-white border-0">
+      <section className="flex flex-col items-center justify-center h-60 bg-primaryColor text-white border-0">
         <Jump>
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold">
             ES EL MOMENTO DE VER LOS RESULTADOS EN 3 MESES.
@@ -97,7 +97,7 @@ export default function Index() {
       <section className="gap-x-30 grid grid-cols-1 md:grid-cols-2 py-10 place-items-center px-8 gap-y-10 xl:px-20 ">
         <Fade>
           <div className="md:w-11/12">
-            <h1 className=" text-3xl md:text-4xl font-semibold text-primary">
+            <h1 className=" text-3xl md:text-4xl font-semibold text-primaryColor">
               Natural, fácil y divertido
             </h1>
             <p className="mt-6 text-gray-600 text-lg md:text-xl ">
@@ -125,7 +125,7 @@ export default function Index() {
         </Fade>
         <Fade>
           <div className="md:w-11/12">
-            <h1 className=" text-3xl  md:text-4xl font-semibold text-primary">
+            <h1 className=" text-3xl  md:text-4xl font-semibold text-primaryColor">
               Metodología basada en la ciencia
             </h1>
             <p className="mt-6 text-gray-600 text-lg md:text-xl">
@@ -143,7 +143,7 @@ export default function Index() {
       <section className="gap-x-30  gap-y-16 grid grid-cols-1 md:grid-cols-2 py-10 place-items-center px-8 xl:px-20 mt-10 md:mt-20">
         <Fade>
           <div className="md:w-11/12">
-            <h1 className=" text-3xl md:text-4xl font-semibold text-primary">
+            <h1 className=" text-3xl md:text-4xl font-semibold text-primaryColor">
               Despertamos tu potencial
             </h1>
             <p className="mt-6 text-gray-600 text-lg md:text-xl">
@@ -167,7 +167,7 @@ export default function Index() {
       </section>
       {/* 
       <Image alt="wave" src={waveImg} className="border-0" />
-      <section className="flex flex-col items-center justify-center py-8 lg:pb-20 bg-primary text-white border-0">
+      <section className="flex flex-col items-center justify-center py-8 lg:pb-20 bg-primaryColor text-white border-0">
         <div className="text-center">
           <Jump>
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold mb-4">
@@ -205,10 +205,10 @@ export default function Index() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <Zoom duration={1500}>
-              <div className="bg-white px-6 py-8  rounded-lg shadow-lg border-4 border-primary">
+              <div className="bg-white px-6 py-8  rounded-lg shadow-lg border-4 border-primaryColor">
                 <div className="flex flex-col text-center justify-center items-center gap-2">
                   <Image src={metodoImg} alt="icon" className="w-20" />
-                  <h2 className="text-xl font-semibold text-primary mb-4 uppercase">
+                  <h2 className="text-xl font-semibold text-primaryColor mb-4 uppercase">
                     Calidad académica
                   </h2>
                 </div>
@@ -220,10 +220,10 @@ export default function Index() {
               </div>
             </Zoom>
             <Zoom duration={1500}>
-              <div className="bg-white px-6 py-8  rounded-lg shadow-lg  border-4 border-secondary">
+              <div className="bg-white px-6 py-8  rounded-lg shadow-lg  border-4 border-secondaryColor">
                 <div className="flex flex-col text-center justify-center items-center gap-2">
                   <Image src={tallerImg} alt="icon" className="w-20" />
-                  <h2 className="text-xl  font-semibold text-primary mb-4 uppercase">
+                  <h2 className="text-xl  font-semibold text-primaryColor mb-4 uppercase">
                     Becas
                   </h2>
                 </div>
@@ -238,7 +238,7 @@ export default function Index() {
               <div className="bg-white px-6 py-8  rounded-lg shadow-lg  border-4 border-baseColor">
                 <div className="flex flex-col text-center justify-center items-center gap-2">
                   <Image src={workImg} alt="icon" className="w-20" />
-                  <h2 className="text-xl font-semibold text-primary mb-4 uppercase">
+                  <h2 className="text-xl font-semibold text-primaryColor mb-4 uppercase">
                     inserción Laboral
                   </h2>
                 </div>

@@ -4,13 +4,14 @@ import Tada from "react-reveal/Tada";
 
 import logoImg from "@/static/images/logo.jpeg";
 import iconLogo from "@/static/images/iconLogo.jpeg";
+import { FormContainer } from "@/components/FormContainer";
 
 import { Layout } from "@/components/Layout";
 
-const Contact = () => {
+const Contactanos = () => {
   return (
     <Layout>
-      <div className="margin-top-page ">
+      {/* <div className="margin-top-page ">
         <section className="flex justify-center items-center">
           <Image className="w-80 md:w-96" alt="icon" src={logoImg} />
         </section>
@@ -20,9 +21,11 @@ const Contact = () => {
             <Image className="w-44 md:w-28" src={iconLogo} alt="logo img" />
           </div>
         </Tada>
-      </div>
+        
+      </div> */}
+      <FormContainer />
     </Layout>
   );
 };
 
-export default Contact;
+export default Contactanos;
