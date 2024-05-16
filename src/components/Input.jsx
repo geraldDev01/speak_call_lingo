@@ -1,6 +1,14 @@
 import PropTypes from "prop-types";
 
-export const Input = ({ name, value, type, placeholder, maxLength }) => {
+export const Input = ({
+  name,
+  value,
+  type,
+  placeholder,
+  maxLength,
+  handleChange,
+  required,
+}) => {
   return (
     <input
       aria-autocomplete="none"
@@ -10,8 +18,9 @@ export const Input = ({ name, value, type, placeholder, maxLength }) => {
       className="Input"
       type={type}
       placeholder={placeholder}
- 
+      onChange={handleChange}
       maxLength={maxLength}
+      required={required}
     />
   );
 };
@@ -22,4 +31,6 @@ Input.propTypes = {
   placeholder: PropTypes.string.isRequired,
   type: PropTypes.oneOf(["text", "email"]).isRequired,
   maxLength: PropTypes.number,
+  handleChange: PropTypes.func,
+  required: PropTypes.bool,
 };
