@@ -139,6 +139,8 @@
     line-height: 2;
   }
 
+
+
   @include media-breakpoint-down(xl) {
     &-subTitle {
       width: 60%;
@@ -241,3 +243,15 @@
   margin-right: 10px;
 }
 
+
+.loader-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+}
+
+.FormContainer-container {
+  position: relative; /* Make sure the container has position relative */
+}

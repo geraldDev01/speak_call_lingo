@@ -2,10 +2,14 @@ import { createEmail } from "@/services/contact";
 import { showToast } from "@/utils";
 import { useState } from "react";
 import { Input } from "./Input";
+import { Audio } from "react-loader-spinner";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import { useFormType } from "@/context";
 
 export const FormContainer = () => {
+  const { formType, setFormType } = useFormType();
+
   const initialState = {
     name: "",
     last_name: "",
@@ -16,9 +20,8 @@ export const FormContainer = () => {
     exam_type: "",
     date: null,
   };
-
-  const [formType, setFormType] = useState(true);
   const [userData, setUserData] = useState(initialState);
+  const [loading, setLoading] = useState(false);
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -37,9 +40,9 @@ export const FormContainer = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+    setLoading(true); // Set loading to true when submitting form
     try {
       const response = await createEmail(userData);
-
       if (response) {
         setUserData(initialState);
         cleanInputs();
@@ -47,6 +50,8 @@ export const FormContainer = () => {
       }
     } catch (error) {
       console.error(error);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -85,6 +90,17 @@ export const FormContainer = () => {
             </span>
           </div>
           <div className="FormContainer-container pt-4">
+            {loading && (
+              <div className="loader-wrapper">
+                <Audio
+                  height="50"
+                  width="50"
+                  radius="9"
+                  color="blue"
+                  ariaLabel="loading"
+                />
+              </div>
+            )}
             <form onSubmit={handleSubmit}>
               <section className="FormContainer-containerInputs">
                 <Input

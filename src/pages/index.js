@@ -19,8 +19,10 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import { Layout } from "@/components/Layout";
+import { useFormType } from "@/context";
 
 export default function Index() {
+  const { setFormType } = useFormType();
   return (
     <Layout>
       <Image alt="wave" src={waveIndex} className="absolute w-full" />
@@ -48,12 +50,18 @@ export default function Index() {
                     y conquista el mundo!
                   </h1>
 
-                  <div className="flex p-6 justify-center items-center bg-baseColor font-medium text-lg h-16 rounded-xl w-[350px]">
+                  <div
+                    onClick={() => setFormType(true)}
+                    className="flex p-6 justify-center items-center bg-baseColor font-medium text-lg h-16 rounded-xl w-[350px]"
+                  >
                     <Link href="/Contactanos">
                       <p className="py-4 text-white">QUIERO EMPEZAR DE CERO</p>
                     </Link>
                   </div>
-                  <div className="flex p-6 justify-center items-center bg-primaryColor font-medium text-lg h-16 rounded-xl w-[350px]">
+                  <div
+                    onClick={() => setFormType(false)}
+                    className="flex p-6 justify-center items-center bg-primaryColor font-medium text-lg h-16 rounded-xl w-[350px]"
+                  >
                     <Link href="/Contactanos">
                       <p className="py-4 text-white">
                         {" "}
