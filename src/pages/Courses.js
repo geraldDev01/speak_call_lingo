@@ -1,28 +1,13 @@
-import Image from "next/image";
-
-import Tada from "react-reveal/Tada";
-
-import logoImg from "@/static/images/logo.jpeg";
-import iconLogo from "@/static/images/iconLogo.jpeg";
-import tallerImg from "@/static/images/book.svg";
-import calendarIcon from "@/static/images/calendar.svg";
-
 import { Layout } from "@/components/Layout";
-import Carrousel from "@/components/Carrousel";
 import Jump from "react-reveal/Jump";
-
 import image1 from "@/static/images/teacherbg.jpg";
 import image2 from "@/static/images/study2.jpg";
 import imageCard from "@/static/images/study2.jpg";
 import saveImage from "@/static/images/save.jpeg";
 import teacherImg from "@/static/images/teacherbg.jpg";
-
-
 import { CourseCard } from "@/components/CourseCard";
 
 const Courses = () => {
-  const photos = [image1, image2];
-
   return (
     <Layout>
       <div className="margin-top-page ">
@@ -35,17 +20,7 @@ const Courses = () => {
             </Jump>
           </div>
         </section>
-        {/* <section className=" mx-auto mt-10 w-3/4 ">
-          <div className="border-b border-gray-400 pb-4 mb-3 flex items-center gap-2">
-            <h1 className="text-2xl font-medium">Nuestros Cursos</h1>
-            <Image src={tallerImg} alt="icon" className="w-14" />
-          </div>
-          <p className="pb-6 text-xl text-gray-600 mb-4">
-            Nuestros cursos están enfocados en que obtengas resultados en
-            tiempos recórd!
-          </p>
-        </section> */}
-        
+  
         <div className="flex justify-center items-center bg-gray-100 py-32 px-10">
           <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
             <CourseCard
@@ -100,12 +75,6 @@ const Courses = () => {
            />
           </div>
         </div>
-
-        {/* <section className="flex justify-center items-center">
-          <Image className="w-80 md:w-96" alt="icon" src={logoImg} />
-        </section> */}
-
-        
       </div>
     </Layout>
   );

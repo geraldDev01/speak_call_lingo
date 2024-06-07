@@ -14,7 +14,6 @@ export default async function handler(req, res) {
         date,
       } = req.body;
 
-      // Create a transporter object using the default SMTP transport
       const transporter = nodemailer.createTransport({
         host: "smtp.gmail.com",
         port: 465,

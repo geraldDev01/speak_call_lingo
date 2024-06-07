@@ -147,21 +147,8 @@
       margin-top: 46px;
     }
 
-    &-formContent {
-      // padding-bottom: 0px;
-    }
-
-    &-content {
-      // padding-bottom: 30px;
-    }
-
-    // Content
     &-container {
       height: 100%;
-    }
-    &-content {
-
-      // padding-bottom: 100px;
     }
 
     &-containerButton {
@@ -223,10 +210,6 @@
       margin-top: 100px;
       font-size: 18px;
     }
-
-    &-content {
-      // padding-bottom: 120px;
-    }
     &-formContent {
       width: 100%;
     }
@@ -247,11 +230,14 @@
   outline: none;
   width: 450px;
   height: 60px;
+  max-width: 100%;
   border: 1px solid;
   border-color: #d0d0d0;
   padding-left: 28px;
   font-size: 14px;
   font-family: $regular-font;
   margin-bottom: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 

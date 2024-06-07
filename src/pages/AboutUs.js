@@ -3,25 +3,27 @@ import Image from "next/image";
 import Tada from "react-reveal/Tada";
 
 import logoImg from "@/static/images/logo.jpeg";
+import friends from "@/static/images/friends.png";
+import method from "@/static/images/phoneGuy.png";
+import office from "@/static/images/officeImage.png";
+
 import iconLogo from "@/static/images/iconLogo.jpeg";
 
 import { Layout } from "@/components/Layout";
-import Carrousel from "@/components/Carrousel";
-
-import image1 from "@/static/images/teacherbg.jpg";
-import image2 from "@/static/images/study2.jpg";
-import officeImage from "@/static/images/friends.png";
+import ImageRow from "@/components/ImageRow";
 
 const AboutUs = () => {
-  const photos = [image1, image2];
+  const images = [
+    { src: friends, alt: "Logo 1" },
+    { src: office, alt: "Logo 2" },
+    { src: method, alt: "Logo 2" },
+    // Add more images as needed
+  ];
+  
 
   return (
     <Layout>
       <div className="margin-top-page ">
-        {/* <div>
-          <Carrousel photos={photos} />
-        </div> */}
-
         <section className="flex justify-center items-center pt-6 ">
           <Image className="w-80 md:w-96" alt="icon" src={logoImg} />
         </section>
@@ -32,7 +34,7 @@ const AboutUs = () => {
         </section>
 
         <section className="container mx-auto mt-10  w-3/4 ">
-          <p className="pb-6 text-lg md:text-xl text-gray-600 mb-4">
+          <p className="pb-6 text-lg md:text-xl text-gray-600 mb-4 px-4 text-justify">
             En Speak Call Lingo, no solo enseñamos inglés, sino que también
             transformamos vidas. Somos más que una academia; somos una comunidad
             dinámica donde el aprendizaje se fusiona con el desarrollo personal
@@ -46,11 +48,13 @@ const AboutUs = () => {
           </p>
         </section>
 
+        <ImageRow images={images} />
+
         <section className="container mx-auto mt-10  w-3/4 ">
           <div className="border-b border-gray-400 pb-4 mb-3">
             <h1 className="text-2xl font-medium">Nuestra misión</h1>
           </div>
-          <p className="pb-6 text-lg md:text-xl text-gray-600 mb-4">
+          <p className="pb-6 text-lg md:text-xl text-gray-600 mb-4  px-4 text-justify">
             Transformar el proceso de aprendizaje del inglés con los altos
             estándares internacionales y orientar a los estudiantes a las nuevas
             tendencias globales de oportunidades y crecimiento profesional
@@ -61,7 +65,7 @@ const AboutUs = () => {
           <div className="border-b border-gray-400 pb-4 mb-3">
             <h1 className="text-2xl font-medium">Nuestra visión</h1>
           </div>
-          <p className="pb-6 text-lg md:text-xl text-gray-600 mb-4">
+          <p className="pb-6 text-lg md:text-xl text-gray-600 mb-4  px-4 text-justify">
             Ser referencia internacional en la transformación de vidas a través
             de la enseñanza del inglés y el fortalecimiento mental,
             proporcionando a los estudiantes las herramientas y conocimientos
@@ -69,9 +73,6 @@ const AboutUs = () => {
             oportunidades de crecimiento
           </p>
         </section>
-        {/* <section className="flex justify-center items-center pt-6 ">
-          <Image width={400} alt="icon" src={officeImage} />
-        </section> */}
       
         <Tada>
           <div className="flex justify-center pt-12">

@@ -73,7 +73,7 @@ export const FormContainer = () => {
               }`}
               onClick={() => setFormType(true)}
             >
-              <h2>QUIERO EMPEZAR DE CERO</h2>
+              <h2 className="text-center">QUIERO EMPEZAR DE CERO</h2>
             </span>
             <span
               onClick={() => setFormType(false)}
@@ -81,10 +81,10 @@ export const FormContainer = () => {
                 !formType ? "bg-gray-300" : "bg-white"
               }`}
             >
-              <h2>MEJORAR MIS HABILIDADES</h2>
+              <h2 className="text-center">MEJORAR MIS HABILIDADES</h2>
             </span>
           </div>
-          <div className="FormContainer-container">
+          <div className="FormContainer-container pt-4">
             <form onSubmit={handleSubmit}>
               <section className="FormContainer-containerInputs">
                 <Input
@@ -154,7 +154,7 @@ export const FormContainer = () => {
                     </select>
                     <div>
                       <DatePicker
-                       className="Input"
+                        className="Input"
                         selected={userData.date}
                         onChange={handleDateChange}
                         placeholderText="Selecciona una Fecha"
