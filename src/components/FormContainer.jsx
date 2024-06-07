@@ -1,6 +1,9 @@
+import { createEmail } from "@/services/contact";
 import { showToast } from "@/utils";
 import { useState } from "react";
 import { Input } from "./Input";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
 export const FormContainer = () => {
   const initialState = {
@@ -10,6 +13,8 @@ export const FormContainer = () => {
     phone: "",
     course_type: "",
     reason: "",
+    exam_type: "",
+    date: null,
   };
 
   const [formType, setFormType] = useState(true);
@@ -21,17 +26,28 @@ export const FormContainer = () => {
       ...userData,
       [name]: value,
     });
-    // setErrors({
-    //   ...errors,
-    //   [name]: undefined,
-    // });
   };
 
-  const handleSubmit = (event) => {
+  const handleDateChange = (date) => {
+    setUserData({
+      ...userData,
+      date: date,
+    });
+  };
+
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    console.log(userData);
-    cleanInputs();
-    showToast(`Tu información ha sido enviada correctamente`, "success");
+    try {
+      const response = await createEmail(userData);
+
+      if (response) {
+        setUserData(initialState);
+        cleanInputs();
+        showToast(`Tu información ha sido enviada correctamente`, "success");
+      }
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   const cleanInputs = () =>
@@ -42,21 +58,26 @@ export const FormContainer = () => {
       phone: "",
       course_type: "",
       reason: "",
+      exam_type: "",
+      date: null,
     });
+
   return (
     <section className="FormContainer">
       <div className="FormContainer-content container">
         <div className="FormContainer-formContent">
           <div className="FormContainer-header">
             <span
-              className={`FormContainer-headerTitle ${
+              className={`FormContainer-headerTitle cursor-pointer ${
                 formType ? "bg-gray-300" : "bg-white"
               }`}
+              onClick={() => setFormType(true)}
             >
               <h2>QUIERO EMPEZAR DE CERO</h2>
             </span>
             <span
-              className={`FormContainer-headerTitle ${
+              onClick={() => setFormType(false)}
+              className={`FormContainer-headerTitle cursor-pointer ${
                 !formType ? "bg-gray-300" : "bg-white"
               }`}
             >
@@ -96,28 +117,53 @@ export const FormContainer = () => {
                   value={userData.phone}
                   handleChange={handleChange}
                 />
-                <select
-                  className="Input"
-                  name="course_type"
-                  handleChange={handleChange}
-                  value={userData.course_type}
-                  onChange={handleChange}
-                >
-                  <option value="">Selecciona una Modalidad</option>
-                  <option value="presencial">Presencial</option>
-                </select>
-
-                <select
-                  className="Input"
-                  name="reason"
-                  value={userData.reason}
-                  onChange={handleChange}
-                >
-                  <option value="">Selecciona un Motivo</option>
-                  <option value="trabajo">Trabajo</option>
-                  <option value="viaje">Viaje</option>
-                  <option value="estudio">Estudio</option>
-                </select>
+                {formType ? (
+                  <>
+                    <select
+                      className="Input"
+                      name="course_type"
+                      value={userData.course_type}
+                      onChange={handleChange}
+                    >
+                      <option value="">Selecciona una Modalidad</option>
+                      <option value="presencial">Presencial</option>
+                      <option value="en_linea">En Línea</option>
+                    </select>
+                    <select
+                      className="Input"
+                      name="reason"
+                      value={userData.reason}
+                      onChange={handleChange}
+                    >
+                      <option value="">Selecciona un Motivo</option>
+                      <option value="trabajo">Trabajo</option>
+                      <option value="viaje">Viaje</option>
+                      <option value="estudio">Estudio</option>
+                    </select>
+                  </>
+                ) : (
+                  <>
+                    <select
+                      className="Input"
+                      name="exam_type"
+                      value={userData.exam_type}
+                      onChange={handleChange}
+                    >
+                      <option value="">Selecciona un Tipo de Examen</option>
+                      <option value="nivelacion">Examen de Nivelación</option>
+                    </select>
+                    <div>
+                      <DatePicker
+                       className="Input"
+                        selected={userData.date}
+                        onChange={handleDateChange}
+                        placeholderText="Selecciona una Fecha"
+                        minDate={new Date()}
+                        dateFormat="dd/MM/yyyy"
+                      />
+                    </div>
+                  </>
+                )}
               </section>
 
               <section className="FormContainer-containerButton">
@@ -144,14 +190,6 @@ export const FormContainer = () => {
             </form>
           </div>
         </div>
-        {/* <h2 className="FormContainer-title">¿Por qué Bellify?</h2>
-        <p className="FormContainer-subTitle">
-          Bellify es la primera plataforma de servicios de belleza en España que
-          nace de profesionales del sector pensada e ideada por y para ellos. Ya
-          seas un salón de belleza deseando aumentar la rentabilidad de tu
-          centro o un profesional autónomo, Bellify es la herramienta ideal para
-          ti.{" "}
-        </p> */}
       </div>
     </section>
   );

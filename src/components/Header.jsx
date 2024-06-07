@@ -5,11 +5,13 @@ import { Fade } from "react-reveal";
 
 import menuImg from "@/static/images/menu.svg";
 import logoImg from "@/static/images/logo.jpeg";
+import { useRouter } from "next/router";
 
 export const Header = () => {
+  const router = useRouter();
   const [isOpen, setIsOpen] = useState(false);
   const itemStyle =
-    "text-primaryColor font-semibold cursor-pointer hover:text-baseColor block py-4 py-0";
+    " font-semibold cursor-pointer hover:text-baseColor block py-4 py-0";
 
   const toggleMenu = () => setIsOpen((prevState) => !prevState);
 
@@ -28,16 +30,16 @@ export const Header = () => {
         </div>
         <div className="hidden md:flex gap-x-8 mr-8">
           <Link href="/">
-            <span className={itemStyle}>Inicio</span>
+            <span  className={`${router.pathname == "/" ? "text-baseColor" : "text-primaryColor"} ${itemStyle}`}>Inicio</span>
           </Link>
           <Link href="/AboutUs">
-            <span className={itemStyle}>Sobre Nosotros</span>
+            <span className={`${router.pathname == "/AboutUs" ? "text-baseColor" : "text-primaryColor"} ${itemStyle}`}>Sobre Nosotros</span>
           </Link>
           <Link href="/Courses">
-            <span className={itemStyle}>Cursos</span>
+            <span className={`${router.pathname == "/Courses" ? "text-baseColor" : "text-primaryColor"} ${itemStyle}`}>Cursos</span>
           </Link>
-          <Link href="/Contactanos">
-            <span className={itemStyle}>Contáctanos</span>
+          <Link href="/Contact">
+            <span className={`${router.pathname == "/Contact" ? "text-baseColor" : "text-primaryColor"} ${itemStyle}`}>Contáctanos</span>
           </Link>
         </div>
       </header>
@@ -45,15 +47,17 @@ export const Header = () => {
         <Fade>
           <div className="md:hidden bg-white w-full absolute z-50 text-center text-lg border-primaryColor border-b-2 shadow-lg">
             <Link href="/">
-              <span className={itemStyle}>Inicio</span>
+              <span className={`${router.pathname == "/" ? "text-baseColor" : "text-primaryColor"} ${itemStyle}`}>Inicio</span>
             </Link>
             <Link href="/AboutUs">
-              <span className={itemStyle}>Sobre Nosotros</span>
+              <span className={`${router.pathname == "/AboutUs" ? "text-baseColor" : "text-primaryColor"} ${itemStyle}`}>Sobre Nosotros</span>
             </Link>
             <Link href="/Courses">
-              <span className={itemStyle}>Cursos</span>
+              <span className={`${router.pathname == "/Courses" ? "text-baseColor" : "text-primaryColor"} ${itemStyle}`}>Cursos</span>
             </Link>
-            <span className={itemStyle}>Contáctanos</span>
+            <Link href="/Contact">
+            <span className={`${router.pathname == "/Contact" ? "text-baseColor" : "text-primaryColor"} ${itemStyle}`}>Contáctanos</span>
+            </Link>
           </div>
         </Fade>
       )}
