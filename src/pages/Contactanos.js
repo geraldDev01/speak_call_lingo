@@ -1,8 +1,7 @@
 import { FormContainer } from "@/components/FormContainer";
-
 import { Layout } from "@/components/Layout";
 
-const Contact = () => {
+const Contactanos = () => {
   return (
     <Layout>
       <FormContainer />
@@ -10,4 +9,4 @@ const Contact = () => {
   );
 };
 
-export default Contact;
+export default Contactanos;

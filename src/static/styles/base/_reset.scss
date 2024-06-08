@@ -1,6 +1,21 @@
-@import "./fonts.css";
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-html {
+a {
+  text-decoration: none;
+}
+ul {
+  list-style: none;
+}
+
+p {
+  margin: 0;
+}
+
+body {
   font-family: "Poppins", sans-serif;
 }
 

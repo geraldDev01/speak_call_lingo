@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Slide, Fade } from "react-reveal";
+import { Fade } from "react-reveal";
 import Zoom from "react-reveal/Zoom";
 import Jump from "react-reveal/Jump";
 import Tada from "react-reveal/Tada";
@@ -8,10 +8,6 @@ import Tada from "react-reveal/Tada";
 import metodoImg from "@/static/images/diploma.svg";
 import tallerImg from "@/static/images/study.svg";
 import workImg from "@/static/images/work.svg";
-import bgImage from "@/static/images/studyBackground.jpg";
-import teacherBg from "@/static/images/teacherbg.jpg";
-import metodoBg from "@/static/images/metodo.jpg";
-import waveImg from "@/static/images/wave.svg";
 import logoImg from "@/static/images/logo.jpeg";
 import iconLogo from "@/static/images/iconLogo.jpeg";
 import waveIndex from "@/static/images/waveIndex.svg";
@@ -23,8 +19,10 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import { Layout } from "@/components/Layout";
+import { useFormType } from "@/context";
 
 export default function Index() {
+  const { setFormType } = useFormType();
   return (
     <Layout>
       <Image alt="wave" src={waveIndex} className="absolute w-full" />
@@ -32,9 +30,6 @@ export default function Index() {
         <section className="landing">
           <div className="dark-overlay">
             <div className="landing-inner">
-              {/* <Link href="/">
-              <Image width={400} alt="icon" src={logoImg} />
-            </Link> */}
               <div className="grid grid-cols-1 md:grid-cols-2">
                 <div>
                   <Tada>
@@ -55,26 +50,24 @@ export default function Index() {
                     y conquista el mundo!
                   </h1>
 
-                  {/* <div className="mt-6 flex flex-col   gap-4"> */}
-                  <div className="flex p-6 justify-center items-center bg-baseColor font-medium text-lg h-16 rounded-xl w-[350px]">
-                    <Link href="/contactanos">
+                  <div
+                    onClick={() => setFormType(true)}
+                    className="flex p-6 justify-center items-center bg-baseColor font-medium text-lg h-16 rounded-xl w-[350px]"
+                  >
+                    <Link href="/Contactanos">
                       <p className="py-4 text-white">QUIERO EMPEZAR DE CERO</p>
                     </Link>
                   </div>
-                  <div className="flex p-6 justify-center items-center bg-primary font-medium text-lg h-16 rounded-xl w-[350px]">
-                    <Link href="/contactanos">
+                  <div
+                    onClick={() => setFormType(false)}
+                    className="flex p-6 justify-center items-center bg-primaryColor font-medium text-lg h-16 rounded-xl w-[350px]"
+                  >
+                    <Link href="/Contactanos">
                       <p className="py-4 text-white">
                         {" "}
                         MEJORAR MIS HABILIDADES
                       </p>
                     </Link>
-                    {/* </div> */}
-
-                    {/* <Link href="/contactanos">
-                  <span className="p-4  font-medium text-lg">
-                   
-                  </span>
-                </Link> */}
                   </div>
                 </div>
               </div>
@@ -83,9 +76,9 @@ export default function Index() {
         </section>
       </Fade>
 
-      <section className="flex flex-col items-center justify-center h-60 bg-primary text-white border-0">
+      <section className="flex flex-col items-center justify-center h-60 bg-primaryColor text-white border-0">
         <Jump>
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-center">
             ES EL MOMENTO DE VER LOS RESULTADOS EN 3 MESES.
           </h1>
         </Jump>
@@ -97,7 +90,7 @@ export default function Index() {
       <section className="gap-x-30 grid grid-cols-1 md:grid-cols-2 py-10 place-items-center px-8 gap-y-10 xl:px-20 ">
         <Fade>
           <div className="md:w-11/12">
-            <h1 className=" text-3xl md:text-4xl font-semibold text-primary">
+            <h1 className=" text-3xl md:text-4xl font-semibold text-primaryColor">
               Natural, fácil y divertido
             </h1>
             <p className="mt-6 text-gray-600 text-lg md:text-xl ">
@@ -110,7 +103,7 @@ export default function Index() {
           </div>
         </Fade>
         <Fade duration={1500}>
-          <div className="w-[600px] h-[600px] overflow-hidden rounded-lg">
+          <div className="h-[600px] overflow-hidden rounded-lg">
             <Image width={500} height={200} alt="bg" src={phoneGuy} />
           </div>
         </Fade>
@@ -118,14 +111,13 @@ export default function Index() {
 
       <section className="gap-x-30  gap-y-4 grid grid-cols-1 md:grid-cols-2 py-10 place-items-center px-8 xl:px-20 mt-10 md:mt-20">
         <Fade duration={1500}>
-          {/* <Image width={500} className="rounded-lg" alt="bg" src={} /> */}
-          <div className="w-[500px] h-[500px] overflow-hidden rounded-lg">
+          <div className="w-[350px] md:w-[500px] overflow-hidden rounded-lg">
             <Image width={500} height={200} alt="bg" src={fiendsImg} />
           </div>
         </Fade>
         <Fade>
           <div className="md:w-11/12">
-            <h1 className=" text-3xl  md:text-4xl font-semibold text-primary">
+            <h1 className=" text-3xl  md:text-4xl font-semibold text-primaryColor">
               Metodología basada en la ciencia
             </h1>
             <p className="mt-6 text-gray-600 text-lg md:text-xl">
@@ -143,7 +135,7 @@ export default function Index() {
       <section className="gap-x-30  gap-y-16 grid grid-cols-1 md:grid-cols-2 py-10 place-items-center px-8 xl:px-20 mt-10 md:mt-20">
         <Fade>
           <div className="md:w-11/12">
-            <h1 className=" text-3xl md:text-4xl font-semibold text-primary">
+            <h1 className=" text-3xl md:text-4xl font-semibold text-primaryColor">
               Despertamos tu potencial
             </h1>
             <p className="mt-6 text-gray-600 text-lg md:text-xl">
@@ -159,30 +151,11 @@ export default function Index() {
           </div>
         </Fade>
         <Fade duration={1500}>
-          <div className="w-[600px] h-[600px] overflow-hidden rounded-lg">
+          <div className="w-[350px] h-[550px] md:w-[500px]  overflow-hidden rounded-lg">
             <Image width={500} height={200} alt="bg" src={phoneGirl} />
           </div>
-          {/* <Image width={500} className="rounded-lg" alt="bg" src={teacherBg} /> */}
         </Fade>
       </section>
-      {/* 
-      <Image alt="wave" src={waveImg} className="border-0" />
-      <section className="flex flex-col items-center justify-center py-8 lg:pb-20 bg-primary text-white border-0">
-        <div className="text-center">
-          <Jump>
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold mb-4">
-              Clases Divertidas
-            </h1>
-          </Jump>
-          <Slide duration={1500} bottom>
-            <p className="md:text-xl px-8 leading-relaxed">
-              Estudiar es aburrido, aprender es divertido; con nuestra
-              metodología de aprendizaje podrás aprender de manera fácil y
-              divertida.
-            </p>
-          </Slide>
-        </div>
-      </section> */}
 
       <Tada>
         <div className="flex justify-center pt-12">
@@ -205,10 +178,10 @@ export default function Index() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <Zoom duration={1500}>
-              <div className="bg-white px-6 py-8  rounded-lg shadow-lg border-4 border-primary">
+              <div className="bg-white px-6 py-8  rounded-lg shadow-lg border-4 border-primaryColor">
                 <div className="flex flex-col text-center justify-center items-center gap-2">
                   <Image src={metodoImg} alt="icon" className="w-20" />
-                  <h2 className="text-xl font-semibold text-primary mb-4 uppercase">
+                  <h2 className="text-xl font-semibold text-primaryColor mb-4 uppercase">
                     Calidad académica
                   </h2>
                 </div>
@@ -220,10 +193,10 @@ export default function Index() {
               </div>
             </Zoom>
             <Zoom duration={1500}>
-              <div className="bg-white px-6 py-8  rounded-lg shadow-lg  border-4 border-secondary">
+              <div className="bg-white px-6 py-8  rounded-lg shadow-lg  border-4 border-secondaryColor">
                 <div className="flex flex-col text-center justify-center items-center gap-2">
                   <Image src={tallerImg} alt="icon" className="w-20" />
-                  <h2 className="text-xl  font-semibold text-primary mb-4 uppercase">
+                  <h2 className="text-xl  font-semibold text-primaryColor mb-4 uppercase">
                     Becas
                   </h2>
                 </div>
@@ -238,7 +211,7 @@ export default function Index() {
               <div className="bg-white px-6 py-8  rounded-lg shadow-lg  border-4 border-baseColor">
                 <div className="flex flex-col text-center justify-center items-center gap-2">
                   <Image src={workImg} alt="icon" className="w-20" />
-                  <h2 className="text-xl font-semibold text-primary mb-4 uppercase">
+                  <h2 className="text-xl font-semibold text-primaryColor mb-4 uppercase">
                     inserción Laboral
                   </h2>
                 </div>
