@@ -1,0 +1,11 @@
+// External styles
+@import "./vendor/_vendor.scss";
+
+//base
+@import "./base/_variables.scss";
+@import "./base/_reset.scss";
+
+//components
+
+@import "./components/_formContainer.scss";
+@import "./components/_imageRow.scss";

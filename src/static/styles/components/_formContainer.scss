@@ -1,0 +1,257 @@
+.FormContainer {
+  padding: 200px 0;
+  width: 100%;
+  height: 100%;
+  background: $dark-bg;
+
+  &-header {
+    display: grid;
+    width: 100%;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  &-titleForm {
+    font-family: $regular-font;
+    font-size: 14px;
+    font-weight: normal;
+    display: flex;
+    justify-content: center;
+    display: none;
+
+    p {
+      text-align: center;
+      margin-top: 27px;
+      width: 60%;
+      margin-bottom: 20px;
+    }
+  }
+
+  &-headerTitle {
+    display: flex;
+    height: 100px;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 33px 33px 0 0;
+    justify-content: center;
+    h2 {
+      color: $primary-color-text;
+      font-size: 24px;
+      font-family: $regular-font;
+      margin: 0;
+    }
+    p {
+      margin-top: 2px;
+      font-size: 16px;
+      font-family: $regular-font;
+    }
+  }
+
+  &-content {
+    position: relative;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    // padding-bottom: 228px;
+  }
+
+  &-formContent {
+    width: 85%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    // padding-bottom: 185px;
+  }
+
+  &-button {
+    height: 65px;
+    width: 285px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: $bg-primary-color;
+    color: $light-color-text;
+    border: 0;
+    border-radius: 33px;
+  }
+  // Content
+  &-container {
+    background: $bg-white-color;
+    width: 100%;
+    height: 550px;
+     padding-top: 90px;
+  }
+
+  &-checkBoxContainer {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    width: 100%;
+    margin-bottom: 10px;
+    p {
+      font-family: $regular-font;
+      font-weight: lighter;
+      font-size: 12px;
+      color: $secondary-color;
+    }
+  }
+  &-containerInputs {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 19px;
+    row-gap: 14px;
+    justify-content: center;
+    align-content: center;
+  }
+
+  &-containerButton {
+    margin-top: 70px;
+    width: 100%;
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &-checkboxes {
+    width: 450px;
+  }
+
+  //End of content
+  &-title {
+    color: $primary-color-text;
+    font-family: $title-font;
+    letter-spacing: 7px;
+    font-size: 24px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 35px;
+  }
+
+  &-subTitle {
+    font-family: $regular-font;
+    color: $light-color-text;
+    font-size: 16px;
+    font-weight: normal;
+    text-align: center;
+    width: 50%;
+    line-height: 2;
+  }
+
+
+
+  @include media-breakpoint-down(xl) {
+    &-subTitle {
+      width: 60%;
+    }
+    &-title {
+      margin-top: 46px;
+    }
+
+    &-container {
+      height: 100%;
+    }
+
+    &-containerButton {
+      margin-top: 70px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      justify-content: center;
+      align-items: center;
+      // padding-bottom: 46px;
+    }
+  
+
+    &-headerTitle {
+      h2 {
+        font-weight: normal;
+      }
+      p {
+        font-size: 14px;
+        text-align: center;
+      }
+    }
+  }
+
+  @include media-breakpoint-down(lg) {
+    &-subTitle {
+      width: 70%;
+    }
+    &-title {
+      margin-top: 100px;
+
+    }
+    &-checkboxes {
+      width: 70%;
+    }
+
+    &-titleForm {
+      display: flex;
+    }
+
+    &-container{
+      padding-top: 0;
+    }
+    &-headerTitle {
+      height: 60px;
+      h2 {
+        font-size: 16px;
+        font-weight: normal;
+      }
+      p {
+        display: none;
+      }
+    }
+  }
+
+  @include media-breakpoint-down(md) {
+    &-title {
+      margin-top: 100px;
+      font-size: 18px;
+    }
+    &-formContent {
+      width: 100%;
+    }
+    &-checkboxes {
+      width: 60%;
+    }
+
+    &-subTitle {
+      font-size: 14px;
+      width: 100%;
+      padding: 0 18px;
+    }
+  }
+}
+
+
+.Input {
+  outline: none;
+  width: 450px;
+  height: 60px;
+  max-width: 100%;
+  border: 1px solid;
+  border-color: #d0d0d0;
+  padding-left: 28px;
+  font-size: 14px;
+  font-family: $regular-font;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+
+.loader-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+}
+
+.FormContainer-container {
+  position: relative; /* Make sure the container has position relative */
+}
